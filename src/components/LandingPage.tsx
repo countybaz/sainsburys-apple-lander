@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -82,7 +83,7 @@ const LandingPage = () => {
         </div>
 
         {/* App Preview Images - Horizontal Line */}
-        <div className="mb-2">
+        <div className="mb-1">
           <div className="flex gap-2 overflow-x-auto pb-2 px-1">
             <img 
               src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/fe48ceb8-4f26-42b5-a23a-3d7ba8603fe9.png" 
@@ -109,7 +110,7 @@ const LandingPage = () => {
 
         {/* Preview Section */}
         <div className="mb-4">
-          <h2 className="text-lg font-semibold text-black mb-2">Preview</h2>
+          <h2 className="text-lg font-semibold text-black mb-1">Preview</h2>
           <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide">
             <div className="flex-shrink-0">
               <img 
@@ -139,7 +140,7 @@ const LandingPage = () => {
                   <div className="text-xs text-black">out of 5</div>
                 </div>
                 <div className="flex-1">
-                  <div className="space-y-1">
+                  <div className="space-y-2">
                     {[
                       { stars: 5, width: '70%' },
                       { stars: 4, width: '30%' },
@@ -147,11 +148,11 @@ const LandingPage = () => {
                       { stars: 2, width: '8%' },
                       { stars: 1, width: '13%' }
                     ].map((rating, index) => (
-                      <div key={index} className="flex items-center gap-2">
+                      <div key={index} className="flex items-center gap-3">
                         <div className="text-xs text-black w-3 flex-shrink-0">
                           {rating.stars}
                         </div>
-                        <div className="flex items-center gap-0.5 w-12 flex-shrink-0">
+                        <div className="flex items-center gap-0.5 flex-shrink-0">
                           {Array.from({ length: 5 }, (_, i) => (
                             <span 
                               key={i} 
@@ -161,7 +162,7 @@ const LandingPage = () => {
                             </span>
                           ))}
                         </div>
-                        <div className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden ml-2">
                           <div 
                             className="h-full bg-black rounded-full transition-all duration-300"
                             style={{ width: rating.width }}
