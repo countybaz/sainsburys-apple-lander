@@ -128,14 +128,15 @@ const LandingPage = () => {
           </div>
         </div>
 
-        {/* Ratings Section */}
+        {/* Ratings and Reviews Section */}
         <div className="mb-4">
+          <h2 className="text-lg font-semibold text-black mb-3">Ratings and Reviews</h2>
           <Card className="shadow-sm border-0 bg-white">
             <CardContent className="p-4">
               <div className="flex items-center gap-4">
                 <div className="text-center">
                   <div className="text-2xl font-light text-black mb-1">4.6</div>
-                  <div className="text-xs text-gray-500">out of 5</div>
+                  <div className="text-xs text-black">out of 5</div>
                 </div>
                 <div className="flex-1">
                   <div className="space-y-1">
@@ -147,12 +148,15 @@ const LandingPage = () => {
                       { stars: 1, width: '13%' }
                     ].map((rating, index) => (
                       <div key={index} className="flex items-center gap-2">
-                        <span className="text-xs text-gray-400 w-8">
+                        <div className="text-xs text-black w-3 flex-shrink-0">
+                          {rating.stars}
+                        </div>
+                        <div className="text-xs text-black w-12 flex-shrink-0">
                           {'★'.repeat(rating.stars)}
-                        </span>
+                        </div>
                         <div className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
                           <div 
-                            className="h-full bg-gray-400 rounded-full transition-all duration-300"
+                            className="h-full bg-black rounded-full transition-all duration-300"
                             style={{ width: rating.width }}
                           />
                         </div>
