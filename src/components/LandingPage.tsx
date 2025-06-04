@@ -1,241 +1,164 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Star, Download, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const LandingPage = () => {
-  const [currentScreenshot, setCurrentScreenshot] = useState(0);
+  const [currentTime, setCurrentTime] = useState('');
+  const [currentName, setCurrentName] = useState('');
   
-  const screenshots = [
-    '/placeholder.svg',
-    '/placeholder.svg',
-    '/placeholder.svg',
-    '/placeholder.svg',
-  ];
+  const names = ["Kayla", "Emma", "Sophia", "Olivia", "Mia", "Ava", "Isabella", "Amelia", "Lily", "Hannah"];
 
-  const features = [
-    {
-      title: 'Smart Shopping Lists',
-      description: 'AI-powered suggestions based on your shopping history',
-      icon: '📝'
-    },
-    {
-      title: 'Delivery Tracking',
-      description: 'Real-time updates on your grocery delivery',
-      icon: '🚚'
-    },
-    {
-      title: 'Exclusive Deals',
-      description: 'Access member-only discounts and offers',
-      icon: '💰'
-    },
-    {
-      title: 'Recipe Suggestions',
-      description: 'Get meal ideas with ingredients from Sainsbury\'s',
-      icon: '👨‍🍳'
-    }
-  ];
+  useEffect(() => {
+    const updateFeed = () => {
+      const randomName = names[Math.floor(Math.random() * names.length)];
+      const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      setCurrentTime(`[${time}]`);
+      setCurrentName(randomName);
+    };
 
-  const reviews = [
-    {
-      name: 'Sarah M.',
-      rating: 5,
-      text: 'Amazing app! Makes grocery shopping so much easier and faster.',
-      date: '2 days ago'
-    },
-    {
-      name: 'James L.',
-      rating: 5,
-      text: 'Love the delivery tracking feature. Always know when my groceries arrive.',
-      date: '1 week ago'
-    },
-    {
-      name: 'Emma R.',
-      rating: 4,
-      text: 'Great deals and easy to use interface. Highly recommend!',
-      date: '2 weeks ago'
-    }
-  ];
-
-  const nextScreenshot = () => {
-    setCurrentScreenshot((prev) => (prev + 1) % screenshots.length);
-  };
-
-  const prevScreenshot = () => {
-    setCurrentScreenshot((prev) => (prev - 1 + screenshots.length) % screenshots.length);
-  };
+    updateFeed();
+    const interval = setInterval(updateFeed, Math.random() * (10000 - 5000) + 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-orange-50">
-      {/* Hero Section */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col lg:flex-row items-center gap-8 mb-12">
-          {/* App Icon and Info */}
-          <div className="flex-1 text-center lg:text-left">
-            <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
-              <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl shadow-lg flex items-center justify-center text-white text-3xl font-bold">
-                S
-              </div>
-              <div>
-                <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-                  Sainsbury's Groceries
-                </h1>
-                <p className="text-gray-600 text-lg">Shopping & Food</p>
-                <div className="flex items-center gap-2 mt-2">
-                  <div className="flex items-center gap-1">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+    <div className="min-h-screen bg-gray-50" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif' }}>
+      {/* Header Section */}
+      <div className="px-4 py-6">
+        <div className="flex items-start gap-4 mb-6">
+          <img 
+            src="https://storage.googleapis.com/msgsndr/oj1UE5nldpqOWbC3r8GS/media/6727f1fc37cc55a8175537fe.png" 
+            alt="App Icon" 
+            className="w-24 h-24 rounded-2xl shadow-lg"
+          />
+          <div className="flex-1 pt-1">
+            <h1 className="text-2xl font-semibold text-black mb-1 leading-tight">
+              Sainsbury's Product Reviewer
+            </h1>
+            <p className="text-gray-600 text-base mb-4 leading-snug">
+              Get Rewards By Doing Deals👇
+            </p>
+            <a href="https://unlockrwrd.com/LwA1CaVCV" className="inline-block">
+              <Button className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-8 py-2.5 rounded-full text-base">
+                Apply Now
+              </Button>
+            </a>
+          </div>
+        </div>
+
+        {/* Screenshots Section */}
+        <div className="mb-8">
+          <div className="flex gap-4 overflow-x-auto pb-4">
+            <div className="flex-shrink-0">
+              <img 
+                src="https://storage.googleapis.com/msgsndr/oj1UE5nldpqOWbC3r8GS/media/679e3a6abe5edce77835a875.png" 
+                alt="Screenshot 1" 
+                className="w-52 h-96 rounded-2xl shadow-lg object-cover border border-gray-200"
+              />
+            </div>
+            <div className="flex-shrink-0">
+              <img 
+                src="https://storage.googleapis.com/msgsndr/oj1UE5nldpqOWbC3r8GS/media/679e3a6ae64e963e7a5e8026.png" 
+                alt="Screenshot 2" 
+                className="w-52 h-96 rounded-2xl shadow-lg object-cover border border-gray-200"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Ratings Section */}
+        <div className="mb-8">
+          <Card className="shadow-sm border-0 bg-white">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-6">
+                <div className="text-center">
+                  <div className="text-4xl font-light text-black mb-1">4.6</div>
+                  <div className="text-sm text-gray-500">out of 5</div>
+                </div>
+                <div className="flex-1">
+                  <div className="space-y-2">
+                    {[
+                      { stars: 5, width: '70%' },
+                      { stars: 4, width: '30%' },
+                      { stars: 3, width: '20%' },
+                      { stars: 2, width: '8%' },
+                      { stars: 1, width: '13%' }
+                    ].map((rating, index) => (
+                      <div key={index} className="flex items-center gap-2">
+                        <span className="text-sm text-gray-400 w-12">
+                          {'★'.repeat(rating.stars)}
+                        </span>
+                        <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                          <div 
+                            className="h-full bg-gray-400 rounded-full transition-all duration-300"
+                            style={{ width: rating.width }}
+                          />
+                        </div>
+                      </div>
                     ))}
                   </div>
-                  <span className="text-sm text-gray-600">4.8 • 45K Ratings</span>
                 </div>
               </div>
-            </div>
-            
-            <div className="flex flex-wrap gap-2 justify-center lg:justify-start mb-6">
-              <Badge variant="secondary" className="text-xs">#2 in Food & Drink</Badge>
-              <Badge variant="outline" className="text-xs">Editor's Choice</Badge>
-              <Badge className="bg-green-100 text-green-800 text-xs">Free</Badge>
-            </div>
+            </CardContent>
+          </Card>
+        </div>
 
-            <Button 
-              size="lg" 
-              className="sainsburys-gradient hover:opacity-90 transition-opacity rounded-full px-8 py-3 text-white font-semibold shadow-lg"
-            >
-              <Download className="w-5 h-5 mr-2" />
-              Get
-            </Button>
-          </div>
+        {/* Live Feed */}
+        <div className="mb-8">
+          <Card className="shadow-sm border-gray-200 bg-white">
+            <CardContent className="p-5">
+              <h2 className="text-lg font-semibold text-black mb-4 text-center">Live Feed</h2>
+              <div className="border-2 border-green-500 rounded-lg p-3 bg-green-50">
+                <p className="text-center text-black text-sm leading-relaxed">
+                  <span className="text-green-600 font-medium">{currentTime}</span>{' '}
+                  <span className="text-green-600 font-semibold text-base">{currentName}</span>{' '}
+                  just claimed her
+                  <br />
+                  £100 Sainsburys Gift Card!
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
-          {/* Screenshots Carousel */}
-          <div className="flex-1 max-w-md">
-            <div className="relative">
-              <div className="flex items-center justify-center">
-                <button 
-                  onClick={prevScreenshot}
-                  className="absolute left-2 z-10 p-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg hover:bg-white transition-colors"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                
-                <div className="w-64 h-96 bg-gray-900 rounded-3xl overflow-hidden shadow-2xl">
-                  <img 
-                    src={screenshots[currentScreenshot]} 
-                    alt="App Screenshot"
-                    className="w-full h-full object-cover"
-                  />
+        {/* Reviews */}
+        <div className="space-y-4">
+          <Card className="shadow-sm border-gray-200 bg-white">
+            <CardContent className="p-4">
+              <div className="flex items-center gap-3 mb-3">
+                <img 
+                  src="https://i.pinimg.com/236x/d0/9a/38/d09a38017048ec506b4564d5048352c1.jpg" 
+                  alt="Profile" 
+                  className="w-6 h-6 rounded-full"
+                />
+                <div>
+                  <div className="text-sm font-semibold text-black">Worked So Well!</div>
+                  <div className="text-xs text-gray-500">Yesterday: 10:11 AM</div>
                 </div>
-                
-                <button 
-                  onClick={nextScreenshot}
-                  className="absolute right-2 z-10 p-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg hover:bg-white transition-colors"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
               </div>
-              
-              <div className="flex justify-center gap-2 mt-4">
-                {screenshots.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentScreenshot(index)}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                      index === currentScreenshot ? 'bg-orange-500' : 'bg-gray-300'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* What's New Section */}
-        <Card className="mb-8 shadow-sm border-gray-200">
-          <CardContent className="p-6">
-            <h2 className="text-xl font-semibold mb-3 text-gray-900">What's New</h2>
-            <div className="text-sm text-gray-600 mb-2">Version 8.2.1 • 3 days ago</div>
-            <p className="text-gray-700 leading-relaxed">
-              • Enhanced delivery tracking with live updates<br/>
-              • New personalized recipe recommendations<br/>
-              • Improved search functionality<br/>
-              • Bug fixes and performance improvements
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* Features Grid */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
-              <Card key={index} className="shadow-sm border-gray-200 hover:shadow-md transition-shadow">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="text-3xl">{feature.icon}</div>
-                    <div>
-                      <h3 className="font-semibold text-lg text-gray-900 mb-2">{feature.title}</h3>
-                      <p className="text-gray-600">{feature.description}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Reviews Section */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-center mb-8 text-gray-900">Reviews</h2>
-          <div className="space-y-4">
-            {reviews.map((review, index) => (
-              <Card key={index} className="shadow-sm border-gray-200">
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <div className="flex items-center gap-1">
-                          {[1, 2, 3, 4, 5].map((star) => (
-                            <Star 
-                              key={star} 
-                              className={`w-4 h-4 ${
-                                star <= review.rating 
-                                  ? 'fill-yellow-400 text-yellow-400' 
-                                  : 'text-gray-300'
-                              }`} 
-                            />
-                          ))}
-                        </div>
-                        <span className="font-medium text-gray-900">{review.name}</span>
-                      </div>
-                      <p className="text-gray-700">{review.text}</p>
-                    </div>
-                    <span className="text-sm text-gray-500">{review.date}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Download CTA */}
-        <div className="text-center">
-          <Card className="inline-block shadow-lg border-gray-200">
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Start Shopping Smarter Today
-              </h2>
-              <p className="text-gray-600 mb-6 max-w-md">
-                Join millions of users who save time and money with Sainsbury's Groceries app.
+              <p className="text-black text-sm leading-relaxed">
+                I used this today, it took me a couple hours however it was so worth it when i used it for my whole food shop! My food shop only cost me £5 after using the £100 gift card 😊
               </p>
-              <Button 
-                size="lg" 
-                className="sainsburys-gradient hover:opacity-90 transition-opacity rounded-full px-12 py-4 text-white font-semibold shadow-lg"
-              >
-                <Download className="w-5 h-5 mr-2" />
-                Download Free
-              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="shadow-sm border-gray-200 bg-white">
+            <CardContent className="p-4">
+              <div className="flex items-center gap-3 mb-3">
+                <img 
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJm1VcPK75fg8bFTEJ1c4-7rI84xdHK-OhAw&s" 
+                  alt="Profile" 
+                  className="w-6 h-6 rounded-full"
+                />
+                <div>
+                  <div className="text-sm font-semibold text-black">I use this every week!</div>
+                  <div className="text-xs text-gray-500">Today: 12:01 AM</div>
+                </div>
+              </div>
+              <p className="text-black text-sm leading-relaxed">
+                It takes a bit to get through the deals however after a few hours of clicking its so worth it as the gift card comes straight too you! I use it for my pre drinks x 
+              </p>
             </CardContent>
           </Card>
         </div>
