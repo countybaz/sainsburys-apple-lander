@@ -85,47 +85,27 @@ const LandingPage = () => {
         {/* Preview Section */}
         <div className="mb-6">
           <h2 className="text-lg font-semibold text-black mb-3">Preview</h2>
-          <div className="flex gap-3 overflow-x-auto pb-4">
+          <div className="flex gap-2 overflow-x-auto pb-2">
             <img 
               src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/fe48ceb8-4f26-42b5-a23a-3d7ba8603fe9.png" 
               alt="App Preview 1" 
-              className="w-32 h-56 rounded-lg object-cover flex-shrink-0 shadow-md"
+              className="w-16 h-28 rounded-lg object-cover flex-shrink-0"
             />
             <img 
               src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/8c0aff3e-45bd-49a7-b70c-8d3ffa7dfa9b.png" 
               alt="App Preview 2" 
-              className="w-32 h-56 rounded-lg object-cover flex-shrink-0 shadow-md"
+              className="w-16 h-28 rounded-lg object-cover flex-shrink-0"
             />
             <img 
               src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/61dba3bc-da7a-4a12-b512-a2ed19f1eb90.png" 
               alt="App Preview 3" 
-              className="w-32 h-56 rounded-lg object-cover flex-shrink-0 shadow-md"
+              className="w-16 h-28 rounded-lg object-cover flex-shrink-0"
             />
             <img 
               src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/bbc484b5-34f0-461f-87ab-2dffe0c923b5.png" 
               alt="App Preview 4" 
-              className="w-32 h-56 rounded-lg object-cover flex-shrink-0 shadow-md"
+              className="w-16 h-28 rounded-lg object-cover flex-shrink-0"
             />
-          </div>
-        </div>
-
-        {/* Screenshots Section */}
-        <div className="mb-4">
-          <div className="flex gap-3 overflow-x-auto pb-4">
-            <div className="flex-shrink-0">
-              <img 
-                src="https://storage.googleapis.com/msgsndr/oj1UE5nldpqOWbC3r8GS/media/679e3a6abe5edce77835a875.png" 
-                alt="Screenshot 1" 
-                className="w-28 h-48 rounded-lg shadow-md object-cover"
-              />
-            </div>
-            <div className="flex-shrink-0">
-              <img 
-                src="https://storage.googleapis.com/msgsndr/oj1UE5nldpqOWbC3r8GS/media/679e3a6ae64e963e7a5e8026.png" 
-                alt="Screenshot 2" 
-                className="w-28 h-48 rounded-lg shadow-md object-cover"
-              />
-            </div>
           </div>
         </div>
 
@@ -164,6 +144,26 @@ const LandingPage = () => {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* Screenshots Section */}
+        <div className="mb-4">
+          <div className="flex gap-3 overflow-x-auto pb-4">
+            <div className="flex-shrink-0">
+              <img 
+                src="https://storage.googleapis.com/msgsndr/oj1UE5nldpqOWbC3r8GS/media/679e3a6abe5edce77835a875.png" 
+                alt="Screenshot 1" 
+                className="w-32 h-56 rounded-lg shadow-md object-cover"
+              />
+            </div>
+            <div className="flex-shrink-0">
+              <img 
+                src="https://storage.googleapis.com/msgsndr/oj1UE5nldpqOWbC3r8GS/media/679e3a6ae64e963e7a5e8026.png" 
+                alt="Screenshot 2" 
+                className="w-32 h-56 rounded-lg shadow-md object-cover"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Live Feed */}
