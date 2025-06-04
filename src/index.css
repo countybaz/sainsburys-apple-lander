@@ -100,4 +100,29 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
+
+  @media (max-width: 900px) and (min-width: 768px) {
+    .responsive-text {
+      font-size: 1.1rem;
+    }
+    
+    .responsive-padding {
+      padding: 1rem;
+    }
+    
+    .responsive-margin {
+      margin: 0.75rem;
+    }
+    
+    .responsive-button {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+    }
+    
+    .responsive-image {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+    }
+  }
 }
