@@ -82,7 +82,7 @@ const LandingPage = () => {
         </div>
 
         {/* App Preview Images - Horizontal Line */}
-        <div className="mb-0">
+        <div className="-my-2">
           <div className="flex gap-2 overflow-x-auto pb-0 px-1">
             <img 
               src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/fe48ceb8-4f26-42b5-a23a-3d7ba8603fe9.png" 
