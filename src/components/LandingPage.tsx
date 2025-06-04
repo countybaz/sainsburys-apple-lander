@@ -48,7 +48,7 @@ const LandingPage = () => {
         </div>
 
         {/* What's New Section */}
-        <div className="mb-4">
+        <div className="mb-2">
           <Card className="shadow-sm border-0 bg-white">
             <CardContent className="p-4">
               <h2 className="text-lg font-semibold text-black mb-2">What's New</h2>
@@ -83,8 +83,8 @@ const LandingPage = () => {
         </div>
 
         {/* App Preview Images - Horizontal Line */}
-        <div className="mb-1">
-          <div className="flex gap-2 overflow-x-auto pb-2 px-1">
+        <div className="mb-2">
+          <div className="flex gap-2 overflow-x-auto pb-1 px-1">
             <img 
               src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/fe48ceb8-4f26-42b5-a23a-3d7ba8603fe9.png" 
               alt="App Preview 1" 
