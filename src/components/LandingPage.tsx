@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -39,7 +38,7 @@ const LandingPage = () => {
             <p className="text-gray-600 text-sm mb-3 leading-snug">
               Get Rewards By Doing Deals👇
             </p>
-            <a href="https://unlockrwrd.com/LwA1CaVCV" className="inline-block">
+            <a href="https://glitchy.go2cloud.org/aff_c?offer_id=876&aff_id=25969&source=organic" className="inline-block">
               <Button className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-2 rounded-full text-sm">
                 Apply Now
               </Button>
