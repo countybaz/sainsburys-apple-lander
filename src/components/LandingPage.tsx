@@ -51,12 +51,12 @@ const LandingPage = () => {
         <div className="mb-6 sm:mb-8">
           <Card className="shadow-sm border-0 bg-white">
             <CardContent className="p-4 sm:p-6">
-              <h2 className="text-lg sm:text-xl font-semibold text-black mb-4">What's New</h2>
+              <h2 className="text-lg sm:text-xl font-semibold text-black mb-3">What's New</h2>
               
               {/* Version History */}
-              <div className="mb-4 sm:mb-6">
-                <h3 className="text-sm sm:text-base font-medium text-black mb-1">Version History</h3>
-                <div className="flex items-center gap-2 mb-4">
+              <div className="mb-3 sm:mb-4">
+                <h3 className="text-sm sm:text-base font-medium text-black mb-0.5">Version History</h3>
+                <div className="flex items-center gap-2 mb-3">
                   <span className="text-xs sm:text-sm text-gray-500">Version 2.37.0</span>
                   <span className="text-xs sm:text-sm text-gray-400">•</span>
                   <span className="text-xs sm:text-sm text-gray-500">Jun 24, 2024</span>
@@ -64,7 +64,7 @@ const LandingPage = () => {
               </div>
 
               {/* Process Steps */}
-              <div className="space-y-3">
+              <div className="space-y-2">
                 <div className="flex items-center gap-3">
                   <span className="text-base sm:text-lg">✍️</span>
                   <span className="text-sm sm:text-base text-black">Enter your email & basic info</span>
@@ -85,28 +85,28 @@ const LandingPage = () => {
         {/* Apple-style Preview Images Section */}
         <div className="mb-6 sm:mb-8">
           <div className="flex gap-1.5 sm:gap-2 overflow-x-auto pb-2">
-            <div className="flex-shrink-0 w-24 h-40 sm:w-32 sm:h-56 overflow-hidden rounded-md sm:rounded-lg shadow-sm border border-gray-200">
+            <div className="flex-shrink-0 w-20 h-32 sm:w-24 sm:h-40 overflow-hidden rounded-md sm:rounded-lg shadow-sm border border-gray-200">
               <img 
                 src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/fe48ceb8-4f26-42b5-a23a-3d7ba8603fe9.png" 
                 alt="App Preview 1" 
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="flex-shrink-0 w-24 h-40 sm:w-32 sm:h-56 overflow-hidden rounded-md sm:rounded-lg shadow-sm border border-gray-200">
+            <div className="flex-shrink-0 w-20 h-32 sm:w-24 sm:h-40 overflow-hidden rounded-md sm:rounded-lg shadow-sm border border-gray-200">
               <img 
                 src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/8c0aff3e-45bd-49a7-b70c-8d3ffa7dfa9b.png" 
                 alt="App Preview 2" 
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="flex-shrink-0 w-24 h-40 sm:w-32 sm:h-56 overflow-hidden rounded-md sm:rounded-lg shadow-sm border border-gray-200">
+            <div className="flex-shrink-0 w-20 h-32 sm:w-24 sm:h-40 overflow-hidden rounded-md sm:rounded-lg shadow-sm border border-gray-200">
               <img 
                 src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/61dba3bc-da7a-4a12-b512-a2ed19f1eb90.png" 
                 alt="App Preview 3" 
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="flex-shrink-0 w-24 h-40 sm:w-32 sm:h-56 overflow-hidden rounded-md sm:rounded-lg shadow-sm border border-gray-200">
+            <div className="flex-shrink-0 w-20 h-32 sm:w-24 sm:h-40 overflow-hidden rounded-md sm:rounded-lg shadow-sm border border-gray-200">
               <img 
                 src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/bbc484b5-34f0-461f-87ab-2dffe0c923b5.png" 
                 alt="App Preview 4" 
@@ -123,14 +123,14 @@ const LandingPage = () => {
               <img 
                 src="https://storage.googleapis.com/msgsndr/oj1UE5nldpqOWbC3r8GS/media/679e3a6abe5edce77835a875.png" 
                 alt="Screenshot 1" 
-                className="w-36 h-64 sm:w-52 sm:h-96 rounded-xl sm:rounded-2xl shadow-lg object-cover border border-gray-200"
+                className="w-32 h-56 sm:w-48 sm:h-84 rounded-xl sm:rounded-2xl shadow-lg object-cover border border-gray-200"
               />
             </div>
             <div className="flex-shrink-0">
               <img 
                 src="https://storage.googleapis.com/msgsndr/oj1UE5nldpqOWbC3r8GS/media/679e3a6ae64e963e7a5e8026.png" 
                 alt="Screenshot 2" 
-                className="w-36 h-64 sm:w-52 sm:h-96 rounded-xl sm:rounded-2xl shadow-lg object-cover border border-gray-200"
+                className="w-32 h-56 sm:w-48 sm:h-84 rounded-xl sm:rounded-2xl shadow-lg object-cover border border-gray-200"
               />
             </div>
           </div>
