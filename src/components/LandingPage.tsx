@@ -47,6 +47,41 @@ const LandingPage = () => {
           </div>
         </div>
 
+        {/* What's New Section */}
+        <div className="mb-8">
+          <Card className="shadow-sm border-0 bg-white">
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold text-black mb-4">What's New</h2>
+              
+              {/* Version History */}
+              <div className="mb-6">
+                <h3 className="text-base font-medium text-black mb-1">Version History</h3>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-sm text-gray-500">Version 2.37.0</span>
+                  <span className="text-sm text-gray-400">•</span>
+                  <span className="text-sm text-gray-500">Jun 24, 2024</span>
+                </div>
+              </div>
+
+              {/* Process Steps */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="text-lg">✍️</span>
+                  <span className="text-base text-black">Enter your email & basic info</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-lg">✅</span>
+                  <span className="text-base text-black">Complete recommended Deals</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-lg">💰</span>
+                  <span className="text-base text-black">Claim Your Reward!</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* Screenshots Section */}
         <div className="mb-8">
           <div className="flex gap-4 overflow-x-auto pb-4">
