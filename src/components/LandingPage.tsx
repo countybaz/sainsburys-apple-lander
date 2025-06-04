@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -108,21 +107,22 @@ const LandingPage = () => {
           </div>
         </div>
 
-        {/* Screenshots Section */}
+        {/* Preview Section */}
         <div className="mb-4">
-          <div className="flex gap-3 overflow-x-auto pb-4">
+          <h2 className="text-lg font-semibold text-black mb-3">Preview</h2>
+          <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide">
             <div className="flex-shrink-0">
               <img 
                 src="https://storage.googleapis.com/msgsndr/oj1UE5nldpqOWbC3r8GS/media/679e3a6abe5edce77835a875.png" 
                 alt="Screenshot 1" 
-                className="w-28 h-48 rounded-lg shadow-md object-cover"
+                className="w-32 h-56 rounded-lg shadow-md object-cover"
               />
             </div>
             <div className="flex-shrink-0">
               <img 
                 src="https://storage.googleapis.com/msgsndr/oj1UE5nldpqOWbC3r8GS/media/679e3a6ae64e963e7a5e8026.png" 
                 alt="Screenshot 2" 
-                className="w-28 h-48 rounded-lg shadow-md object-cover"
+                className="w-32 h-56 rounded-lg shadow-md object-cover"
               />
             </div>
           </div>
