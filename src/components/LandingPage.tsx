@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -115,14 +116,14 @@ const LandingPage = () => {
               <img 
                 src="https://storage.googleapis.com/msgsndr/oj1UE5nldpqOWbC3r8GS/media/679e3a6abe5edce77835a875.png" 
                 alt="Screenshot 1" 
-                className="w-32 h-56 rounded-lg shadow-md object-cover"
+                className="w-[calc(50vw-2rem)] max-w-40 h-auto aspect-[9/16] rounded-lg shadow-md object-cover"
               />
             </div>
             <div className="flex-shrink-0">
               <img 
                 src="https://storage.googleapis.com/msgsndr/oj1UE5nldpqOWbC3r8GS/media/679e3a6ae64e963e7a5e8026.png" 
                 alt="Screenshot 2" 
-                className="w-32 h-56 rounded-lg shadow-md object-cover"
+                className="w-[calc(50vw-2rem)] max-w-40 h-auto aspect-[9/16] rounded-lg shadow-md object-cover"
               />
             </div>
           </div>
