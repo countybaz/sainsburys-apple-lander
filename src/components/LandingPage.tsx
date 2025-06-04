@@ -84,27 +84,35 @@ const LandingPage = () => {
 
         {/* App Preview Images - Horizontal Line */}
         <div className="mb-4">
-          <div className="flex gap-1.5 justify-between px-1">
-            <img 
-              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/fe48ceb8-4f26-42b5-a23a-3d7ba8603fe9.png" 
-              alt="App Preview 1" 
-              className="w-[22%] h-auto aspect-[9/16] rounded-lg object-cover"
-            />
-            <img 
-              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/8c0aff3e-45bd-49a7-b70c-8d3ffa7dfa9b.png" 
-              alt="App Preview 2" 
-              className="w-[22%] h-auto aspect-[9/16] rounded-lg object-cover"
-            />
-            <img 
-              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/61dba3bc-da7a-4a12-b512-a2ed19f1eb90.png" 
-              alt="App Preview 3" 
-              className="w-[22%] h-auto aspect-[9/16] rounded-lg object-cover"
-            />
-            <img 
-              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/bbc484b5-34f0-461f-87ab-2dffe0c923b5.png" 
-              alt="App Preview 4" 
-              className="w-[22%] h-auto aspect-[9/16] rounded-lg object-cover"
-            />
+          <div className="flex gap-2 overflow-x-auto pb-2 px-1">
+            <div className="flex-shrink-0 w-20 h-36 bg-gray-100 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/fe48ceb8-4f26-42b5-a23a-3d7ba8603fe9.png" 
+                alt="App Preview 1" 
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="flex-shrink-0 w-20 h-36 bg-gray-100 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/8c0aff3e-45bd-49a7-b70c-8d3ffa7dfa9b.png" 
+                alt="App Preview 2" 
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="flex-shrink-0 w-20 h-36 bg-gray-100 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/61dba3bc-da7a-4a12-b512-a2ed19f1eb90.png" 
+                alt="App Preview 3" 
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="flex-shrink-0 w-20 h-36 bg-gray-100 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/oj1UE5nldpqOWbC3r8GS/media/bbc484b5-34f0-461f-87ab-2dffe0c923b5.png" 
+                alt="App Preview 4" 
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
         </div>
 
