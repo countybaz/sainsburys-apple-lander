@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { handleGeoRedirect } from '@/utils/geoRedirect';
 
 const LandingPage = () => {
   const [currentTime, setCurrentTime] = useState('');
   const [currentName, setCurrentName] = useState('');
   const names = ["Kayla", "Emma", "Sophia", "Olivia", "Mia", "Ava", "Isabella", "Amelia", "Lily", "Hannah"];
+  
   useEffect(() => {
     const updateFeed = () => {
       const randomName = names[Math.floor(Math.random() * names.length)];
@@ -20,6 +22,12 @@ const LandingPage = () => {
     const interval = setInterval(updateFeed, Math.random() * (10000 - 5000) + 5000);
     return () => clearInterval(interval);
   }, [names]);
+
+  const handleApplyNowClick = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    await handleGeoRedirect();
+  };
+
   return <div className="min-h-screen bg-gray-50" style={{
     fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif'
   }}>
@@ -34,11 +42,11 @@ const LandingPage = () => {
             <p className="text-gray-600 text-sm mb-3 leading-snug">
               Get Rewards By Doing Deals👇
             </p>
-            <a href="https://glitchy.go2cloud.org/aff_c?offer_id=1942&aff_id=25969&source=organic" className="inline-block">
+            <button onClick={handleApplyNowClick} className="inline-block">
               <Button className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-2 rounded-full text-sm">
                 Apply Now
               </Button>
-            </a>
+            </button>
           </div>
         </div>
 
