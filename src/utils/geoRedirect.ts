@@ -1,6 +1,6 @@
 
 export const getRedirectUrl = async (): Promise<string> => {
-  const ukUrl = "https://glitchy.go2cloud.org/aff_c?offer_id=1942&aff_id=25969&source=organic";
+  const targetCountriesUrl = "https://www.tapplink.co/21468/1084";
   const otherUrl = "https://rewardorbit.com/?type=paypal&value=100&s1=67c90d33e4d4149f9f6c3a5e&t=1";
   
   try {
@@ -10,18 +10,23 @@ export const getRedirectUrl = async (): Promise<string> => {
     
     console.log('Geolocation data:', data);
     
-    // Check if user is from UK
-    if (data.country_code === 'GB' || data.country === 'United Kingdom') {
-      console.log('UK traffic detected, redirecting to UK URL');
-      return ukUrl;
+    // Check if user is from UK, AU, CA, or US
+    const targetCountries = ['GB', 'AU', 'CA', 'US'];
+    if (targetCountries.includes(data.country_code) || 
+        data.country === 'United Kingdom' || 
+        data.country === 'Australia' || 
+        data.country === 'Canada' || 
+        data.country === 'United States') {
+      console.log(`${data.country_code} traffic detected, redirecting to target countries URL`);
+      return targetCountriesUrl;
     } else {
-      console.log('Non-UK traffic detected, redirecting to other URL');
+      console.log('Other country traffic detected, redirecting to other URL');
       return otherUrl;
     }
   } catch (error) {
     console.error('Geolocation detection failed:', error);
-    // Fallback to UK URL if geolocation fails
-    return ukUrl;
+    // Fallback to target countries URL if geolocation fails
+    return targetCountriesUrl;
   }
 };
 
