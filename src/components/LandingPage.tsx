@@ -24,13 +24,40 @@ const LandingPage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleApplyNowClick = async () => {
-    console.log('Apply Now button clicked');
+  const handleApplyNowClick = async (e) => {
+    console.log('Apply Now button clicked - event:', e);
+    console.log('User agent:', navigator.userAgent);
+    
+    // Prevent default behavior and stop propagation
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    
     try {
+      console.log('About to call handleGeoRedirect');
       await handleGeoRedirect();
+      console.log('handleGeoRedirect completed successfully');
     } catch (error) {
       console.error('Error in handleApplyNowClick:', error);
     }
+  };
+
+  // Safari-specific click handler with multiple event types
+  const handleSafariClick = (e) => {
+    console.log('Safari click handler triggered');
+    handleApplyNowClick(e);
+  };
+
+  const handleTouchStart = (e) => {
+    console.log('Touch start event');
+    e.preventDefault();
+  };
+
+  const handleTouchEnd = (e) => {
+    console.log('Touch end event');
+    e.preventDefault();
+    handleApplyNowClick(e);
   };
 
   return <div className="min-h-screen bg-gray-50" style={{
@@ -47,16 +74,28 @@ const LandingPage = () => {
             <p className="text-gray-600 text-sm mb-3 leading-snug">
               Get Rewards By Doing Deals👇
             </p>
-            <Button 
-              onClick={handleApplyNowClick}
-              className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white font-medium px-6 py-2 rounded-full text-sm cursor-pointer"
+            <div
+              onClick={handleSafariClick}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              className="inline-block bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white font-medium px-6 py-2 rounded-full text-sm cursor-pointer select-none"
               style={{ 
                 WebkitTapHighlightColor: 'rgba(59, 130, 246, 0.3)',
-                touchAction: 'manipulation'
+                touchAction: 'manipulation',
+                WebkitUserSelect: 'none',
+                userSelect: 'none',
+                WebkitTouchCallout: 'none'
+              }}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  handleApplyNowClick(e);
+                }
               }}
             >
               Apply Now
-            </Button>
+            </div>
           </div>
         </div>
 
