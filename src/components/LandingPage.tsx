@@ -3,10 +3,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { handleGeoRedirect } from '@/utils/geoRedirect';
 
+const names = ["Kayla", "Emma", "Sophia", "Olivia", "Mia", "Ava", "Isabella", "Amelia", "Lily", "Hannah"];
+
 const LandingPage = () => {
   const [currentTime, setCurrentTime] = useState('');
   const [currentName, setCurrentName] = useState('');
-  const names = ["Kayla", "Emma", "Sophia", "Olivia", "Mia", "Ava", "Isabella", "Amelia", "Lily", "Hannah"];
   
   useEffect(() => {
     const updateFeed = () => {
@@ -21,7 +22,7 @@ const LandingPage = () => {
     updateFeed();
     const interval = setInterval(updateFeed, Math.random() * (10000 - 5000) + 5000);
     return () => clearInterval(interval);
-  }, [names]);
+  }, []);
 
   const handleApplyNowClick = async () => {
     console.log('Apply Now button clicked');
