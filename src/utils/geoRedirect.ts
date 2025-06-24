@@ -30,7 +30,20 @@ export const getRedirectUrl = async (): Promise<string> => {
   }
 };
 
-export const handleGeoRedirect = async () => {
-  const url = await getRedirectUrl();
-  window.open(url, '_blank');
+export const handleGeoRedirect = () => {
+  // Open window immediately to preserve user gesture
+  const newWindow = window.open('', '_blank');
+  
+  if (newWindow) {
+    // Get the redirect URL and update the window location
+    getRedirectUrl().then(url => {
+      newWindow.location.href = url;
+    }).catch(error => {
+      console.error('Error getting redirect URL:', error);
+      // Fallback URL if geolocation fails
+      newWindow.location.href = "https://www.tapplink.co/21468/1084";
+    });
+  } else {
+    console.error('Popup was blocked');
+  }
 };
