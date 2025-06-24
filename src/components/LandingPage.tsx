@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -24,28 +23,12 @@ const LandingPage = () => {
     return () => clearInterval(interval);
   }, [names]);
 
-  const handleApplyNowClick = async (e: React.MouseEvent | React.TouchEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    // Prevent double firing on mobile devices
-    if (e.type === 'touchend') {
-      // Add a small delay to prevent click event from firing after touchend
-      setTimeout(async () => {
-        console.log('Apply Now button clicked (touch)');
-        try {
-          await handleGeoRedirect();
-        } catch (error) {
-          console.error('Error in handleApplyNowClick:', error);
-        }
-      }, 50);
-    } else if (e.type === 'click') {
-      console.log('Apply Now button clicked (click)');
-      try {
-        await handleGeoRedirect();
-      } catch (error) {
-        console.error('Error in handleApplyNowClick:', error);
-      }
+  const handleApplyNowClick = async () => {
+    console.log('Apply Now button clicked');
+    try {
+      await handleGeoRedirect();
+    } catch (error) {
+      console.error('Error in handleApplyNowClick:', error);
     }
   };
 
@@ -65,12 +48,9 @@ const LandingPage = () => {
             </p>
             <Button 
               onClick={handleApplyNowClick}
-              onTouchEnd={handleApplyNowClick}
-              className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white font-medium px-6 py-2 rounded-full text-sm select-none"
+              className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white font-medium px-6 py-2 rounded-full text-sm cursor-pointer"
               style={{ 
-                WebkitTapHighlightColor: 'transparent',
-                WebkitUserSelect: 'none',
-                WebkitTouchCallout: 'none',
+                WebkitTapHighlightColor: 'rgba(59, 130, 246, 0.3)',
                 touchAction: 'manipulation'
               }}
             >
